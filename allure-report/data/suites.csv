@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4935","Login Test -> Username: Rajat179284 | Expected: Success","chromium","Wed Oct 22 23:28:43 IST 2025","passed","Wed Oct 22 23:28:48 IST 2025","Data-Driven Login Tests","loginDataDriven.spec.js","",""
+"","9671","Verify Cart Contents","chromium","Wed Oct 22 23:31:49 IST 2025","passed","Wed Oct 22 23:31:58 IST 2025","","cart.spec.js","",""
+"","4982","Login Test -> Username: admin | Expected: Failure","chromium","Wed Oct 22 23:28:43 IST 2025","passed","Wed Oct 22 23:28:48 IST 2025","Data-Driven Login Tests","loginDataDriven.spec.js","",""
+"","5178","Login Test -> Username: Pratik2000 | Expected: Success","chromium","Wed Oct 22 23:28:43 IST 2025","passed","Wed Oct 22 23:28:48 IST 2025","Data-Driven Login Tests","loginDataDriven.spec.js","",""

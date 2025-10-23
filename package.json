@@ -15,7 +15,7 @@
     "automation",
     "allure"
   ],
-  "author": "Your Name",
+  "author": "Rajat Sahoo",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.56.1",

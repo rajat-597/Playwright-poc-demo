@@ -25,7 +25,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --reporter=list,allure-playwright
+        run: npx playwright test --project=chromium --reporter=list,allure-playwright
         # allure-playwright will save raw results to allure-results folder by default
 
       - name: Generate Playwright HTML Report

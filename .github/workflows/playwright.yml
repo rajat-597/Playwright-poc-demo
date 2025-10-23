@@ -12,9 +12,11 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
 
@@ -24,12 +26,11 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
+      - name: Run Playwright tests (Chromium only)
         run: npx playwright test --project=chromium --reporter=list,allure-playwright
-        # allure-playwright will save raw results to allure-results folder by default
 
       - name: Generate Playwright HTML Report
-        run: npx playwright show-report --reporter=html
+        run: npx playwright show-report
 
       - name: Generate Allure Report
         run: |
@@ -46,3 +47,27 @@ jobs:
         with:
           name: allure-report
           path: allure-report/
+
+  # Optional: Publish Allure report to GitHub Pages
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Allure report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Deploy Allure report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report
+
+
+        

@@ -35,7 +35,7 @@ jobs:
       #  Generate HTML report for artifact upload
       - name: Generate Playwright HTML Report
         if: always()
-        run: npx playwright test --reporter=html
+        run: npx playwright test --project=chromium --reporter=html
 
       #  Install Allure CLI
       - name: Install Allure Commandline

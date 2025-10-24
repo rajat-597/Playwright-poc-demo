@@ -11,7 +11,7 @@ export class LoginPage {
     async navigateToLoginPage(){
         await this.page.goto('/');
     }
-
+// to trigger the ci 
     async SubmitLogin(username,password){
         await this.page.locator(this.loginlink).click();
         await this.page.locator(this.loginInputField).fill(username);
